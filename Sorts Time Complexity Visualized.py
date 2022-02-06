@@ -120,7 +120,6 @@ if __name__ == "__main__":
 
     markings = np.array([i*1000 for i in range(1, 11)])
     linetypes = ['-', '-', '-.', ':', '--']
-    k = 0
 
     plt.xlabel("Array Size ---->")
     plt.ylabel("Time Taken in seconds ---->")
@@ -135,17 +134,20 @@ if __name__ == "__main__":
             sort['algo'](array)
             end = time.time()
 
-            time_taken.append(int(end-start))
-            print(f"Length of Array : {i * 1000}")
-            print(f"Time Taken : {end-start}\n")
+            time_taken.append(end-start)
+            sort_time = "{:.4f}".format(end-start)
 
-        print(f"Overall Time by {sort['name']} : {time.time()-total_time}")
+            print(f"Length of Array : {i * 1000}")
+            print(f"Time Taken : {sort_time}s\n")
+
+        total = "{:.4f}".format(time.time()-total_time)
+
+        print(f"Overall Time by {sort['name']} : {total}s")
         print('----------------------------------------------------------------\n\n')
 
         plt.plot(markings, time_taken,
-                 linestyle=linetypes[k], label=sort["name"])
-        k += 1
+                 linestyle=linetypes, label=sort["name"])
 
 plt.legend()
-# plt.grid()
+plt.grid()
 plt.show()
