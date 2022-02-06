@@ -1,5 +1,3 @@
-from itertools import starmap
-from turtle import st
 import numpy as np
 from matplotlib import pyplot as plt
 import time
