@@ -36,6 +36,9 @@ if __name__ == "__main__":
     total_time = time.time()
     time_taken = list()
 
+    plt.xlabel("Array Size -->")
+    plt.ylabel("Time Taken in seconds -->")
+
     print("**** Heap Sort ****")
     for i in range(1, 11):
         array = np.random.randint(i * 10000, size=i * 10000)
